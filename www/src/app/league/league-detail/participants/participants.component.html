@@ -1,0 +1,26 @@
+<div class="participants-container">
+  <h2>Participantes</h2>
+  <div class="participants-list">
+    <div *ngFor="let participant of participants" class="participant-item">
+      <div class="participant-info">
+        <mat-avatar
+          class="avatar"
+          [ngStyle]="{
+            'background-color': getAvatarColor(participant.username)
+          }"
+        >
+          {{ getInitials(participant.username) }}
+        </mat-avatar>
+        <div class="user-details">
+          <h3>{{ participant.username }}</h3>
+          <p class="nickname">{{ participant.nickname }}</p>
+        </div>
+      </div>
+      <div class="team-info">
+        <h2>{{ participant.teamName }}</h2>
+        <h3>{{ participant.race }}</h3>
+        <h3><strong>Valoración Actual:</strong> {{ participant.rating }}</h3>
+      </div>
+    </div>
+  </div>
+</div>

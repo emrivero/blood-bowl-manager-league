@@ -1,0 +1,70 @@
+.tables-container {
+    display: flex;
+    /* Flexbox para organizar las tablas */
+    justify-content: space-between;
+    /* Espacio entre tablas */
+    margin-top: 24px;
+}
+
+.table-incentives,
+.table-stars {
+    flex: 1;
+    /* Cada tabla toma el mismo espacio */
+    margin-right: 16px;
+    /* Margen derecho en la tabla de incentivos */
+    /* Fondo para las tablas */
+    border-radius: 8px;
+    /* Esquinas redondeadas */
+    padding: 16px;
+    /* Espaciado interno */
+}
+
+.table-stars {
+    margin-right: 0;
+    /* Quitar margen derecho en la última tabla */
+}
+
+h3 {
+    margin-bottom: 16px;
+    /* Espaciado inferior */
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    font-weight: bold;
+}
+
+td,
+th {
+    padding: 8px;
+}
+
+tr:nth-child(even) {}
+
+tr:hover {
+    /* Continuación del estilo CSS */
+
+}
+
+/* Estilos adicionales para mejorar la apariencia de las tablas */
+table {
+    border-collapse: collapse;
+    /* Colapsar bordes de las celdas */
+}
+
+
+
+th {
+    text-align: left;
+    /* Alinear el texto en las cabeceras a la izquierda */
+}
+
+/* Margen para el último elemento de la tabla */
+.table-incentives:last-child,
+.table-stars:last-child {
+    margin-right: 0;
+    /* Sin margen derecho en la última tabla */
+}

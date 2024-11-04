@@ -1,0 +1,127 @@
+<div class="equipos-container">
+  <h2>Selecciona un Equipo</h2>
+
+  <!-- Selector de Equipos -->
+  <mat-form-field appearance="fill">
+    <mat-label>Equipo</mat-label>
+    <mat-select
+      [(value)]="selectedTeam"
+      (selectionChange)="onTeamSelect($event)"
+    >
+      <mat-option *ngFor="let team of teams" [value]="team">{{
+        team.name
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Tabla de Jugadores del Equipo Seleccionado -->
+  <table
+    *ngIf="selectedTeam"
+    mat-table
+    [dataSource]="selectedTeam.players"
+    class="mat-elevation-z8"
+  >
+    <!-- Columna: Posición -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef>Posición</th>
+      <td mat-cell *matCellDef="let player">{{ player.position }}</td>
+    </ng-container>
+
+    <!-- Columna: Atributos -->
+    <ng-container matColumnDef="attributes">
+      <th mat-header-cell *matHeaderCellDef>Atributos</th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.attributes | json }}
+        <!-- Puedes mostrar atributos específicos según tu modelo -->
+      </td>
+    </ng-container>
+
+    <!-- Columna: Habilidades -->
+    <ng-container matColumnDef="skills">
+      <th mat-header-cell *matHeaderCellDef>Habilidades</th>
+      <td mat-cell *matCellDef="let player">{{ player.skills.join(", ") }}</td>
+    </ng-container>
+
+    <!-- Columna: Rasgos -->
+    <ng-container matColumnDef="traits">
+      <th mat-header-cell *matHeaderCellDef>Rasgos</th>
+      <td mat-cell *matCellDef="let player">{{ player.traits.join(", ") }}</td>
+    </ng-container>
+
+    <!-- Columna: Primaria -->
+    <ng-container matColumnDef="primary">
+      <th mat-header-cell *matHeaderCellDef>Primaria</th>
+      <td mat-cell *matCellDef="let player">{{ player.primary.join(", ") }}</td>
+    </ng-container>
+
+    <!-- Columna: Secundaria -->
+    <ng-container matColumnDef="secondary">
+      <th mat-header-cell *matHeaderCellDef>Secundaria</th>
+      <td mat-cell *matCellDef="let player">
+        {{ player.secondary.join(", ") }}
+      </td>
+    </ng-container>
+
+    <!-- Columna: Coste -->
+    <ng-container matColumnDef="cost">
+      <th mat-header-cell *matHeaderCellDef>Coste</th>
+      <td mat-cell *matCellDef="let player">{{ player.cost | currency }}</td>
+    </ng-container>
+
+    <!-- Cabecera y filas -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <div class="tables-container">
+    <!-- Tabla de Incentivos -->
+    <div class="table-incentives">
+      <h3>Incentivos de Blood Bowl</h3>
+      <table mat-table [dataSource]="incentives" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Incentivo</th>
+          <td mat-cell *matCellDef="let incentive">{{ incentive.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef>Precio</th>
+          <td mat-cell *matCellDef="let incentive">
+            {{ incentive.price }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="['name', 'price']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['name', 'price']"></tr>
+      </table>
+    </div>
+
+    <!-- Tabla de Jugadores Estrellas -->
+    <div class="table-stars">
+      <h3>Jugadores Estrellas</h3>
+      <table mat-table [dataSource]="starPlayers" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Nombre</th>
+          <td mat-cell *matCellDef="let starPlayer">{{ starPlayer.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="team">
+          <th mat-header-cell *matHeaderCellDef>Equipo</th>
+          <td mat-cell *matCellDef="let starPlayer">{{ starPlayer.team }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef>Posición</th>
+          <td mat-cell *matCellDef="let starPlayer">
+            {{ starPlayer.position }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="['name', 'team', 'position']"></tr>
+        <tr
+          mat-row
+          *matRowDef="let row; columns: ['name', 'team', 'position']"
+        ></tr>
+      </table>
+    </div>
+  </div>
+</div>

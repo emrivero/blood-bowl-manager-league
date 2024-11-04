@@ -1,0 +1,58 @@
+<mat-sidenav-container class="sidenav-container">
+  <!-- Menú lateral -->
+  <mat-sidenav #sidenav mode="side" opened class="sidenav">
+    <div class="logo">
+      <!-- Logo y nombre de la app -->
+      <mat-icon>person</mat-icon>
+      <h2>
+        <span>{{ "Login" }}</span>
+      </h2>
+    </div>
+    <mat-nav-list>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink="/start">
+        <mat-icon>home</mat-icon>
+        <span>Inicio</span>
+      </a>
+      <a mat-list-item routerLink="/leagues">
+        <mat-icon>emoji_events</mat-icon>
+        <span>Ligas</span>
+      </a>
+      <a mat-list-item routerLink="/tournaments">
+        <mat-icon>sports</mat-icon>
+        <span>Torneos</span>
+      </a>
+      <a mat-list-item routerLink="/teams">
+        <mat-icon>groups</mat-icon>
+        <span>Equipos</span>
+      </a>
+      <a mat-list-item routerLink="/coach">
+        <mat-icon>person</mat-icon>
+        <span>Entrenador</span>
+      </a>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Contenido principal -->
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="toolbar">
+      <h1 class="title">BLOOD BOWL League Manager</h1>
+    </mat-toolbar>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- <footer class="footer">
+  <div class="carousel">
+    <div
+      *ngFor="let image of images; let i = index"
+      class="carousel-image"
+      [class.active]="i === currentImageIndex"
+    >
+      <img [src]="image" alt="Image {{ i + 1 }}" />
+    </div>
+  </div>
+</footer> -->

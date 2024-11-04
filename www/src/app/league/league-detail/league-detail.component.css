@@ -1,0 +1,27 @@
+.league-detail-container {
+    padding: 20px;
+}
+
+h2 {
+    color: #449d44;
+    /* Rojo para el título de la liga */
+    margin-bottom: 16px;
+}
+
+.tab-content {
+    padding: 16px;
+    background-color: #f9f9f9;
+    /* Fondo claro para el contenido de cada tab */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mat-tab-label {
+    color: #333;
+    font-weight: bold;
+}
+
+.mat-tab-label-active {
+    color: #449d44;
+    /* Color activo del tab */
+}

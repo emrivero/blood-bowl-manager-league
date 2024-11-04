@@ -1,0 +1,49 @@
+.match-schedule-container {
+    padding: 20px;
+}
+
+.matches-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.match-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f3f3f3;
+    padding: 12px 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.team {
+    display: flex;
+    align-items: center;
+}
+
+.team-logo {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+
+.team-name {
+    font-weight: 600;
+}
+
+.match-info {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.match-score {
+    color: #4caf50;
+}
+
+.match-vs {
+    color: #888;
+}

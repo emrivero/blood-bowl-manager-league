@@ -1,0 +1,60 @@
+.ligas-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.ligas-container h2 {
+    color: #449d44;
+    /* Color rojo */
+    margin-bottom: 16px;
+    font-size: 2rem;
+}
+
+.ligas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    padding: 16px;
+}
+
+.liga-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.liga-card:hover {
+    transform: scale(1.05);
+    /* Efecto de aumento al pasar el mouse */
+}
+
+mat-card-content h3 {
+    color: #449d44;
+    /* Color rojo */
+    margin-bottom: 8px;
+}
+
+mat-card-content p {
+    color: #333333;
+    font-size: 14px;
+}
+
+button[mat-raised-button] {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    /* Espacio entre el icono y el texto */
+}
+
+.ligas-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.ligas-container h2 {
+    margin: 0;
+}

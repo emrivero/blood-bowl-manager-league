@@ -1,0 +1,64 @@
+<div class="clasificacion-container">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Posición -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef>Posición</th>
+      <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+    </ng-container>
+
+    <!-- Nombre del equipo -->
+    <ng-container matColumnDef="teamName">
+      <th mat-header-cell *matHeaderCellDef>Nombre del Equipo</th>
+      <td mat-cell *matCellDef="let element">{{ element.teamName }}</td>
+    </ng-container>
+
+    <!-- Puntos -->
+    <ng-container matColumnDef="points">
+      <th mat-header-cell *matHeaderCellDef>Puntos</th>
+      <td mat-cell *matCellDef="let element">{{ element.points }}</td>
+    </ng-container>
+
+    <!-- Partidos Ganados -->
+    <ng-container matColumnDef="matchesWon">
+      <th mat-header-cell *matHeaderCellDef>Partidos Ganados</th>
+      <td mat-cell *matCellDef="let element">{{ element.matchesWon }}</td>
+    </ng-container>
+
+    <!-- Partidos Perdidos -->
+    <ng-container matColumnDef="matchesLost">
+      <th mat-header-cell *matHeaderCellDef>Partidos Perdidos</th>
+      <td mat-cell *matCellDef="let element">{{ element.matchesLost }}</td>
+    </ng-container>
+
+    <!-- Partidos Empatados -->
+    <ng-container matColumnDef="matchesDrawn">
+      <th mat-header-cell *matHeaderCellDef>Partidos Empatados</th>
+      <td mat-cell *matCellDef="let element">{{ element.matchesDrawn }}</td>
+    </ng-container>
+
+    <!-- Ratio Touchdowns -->
+    <ng-container matColumnDef="touchdownRatio">
+      <th mat-header-cell *matHeaderCellDef>Ratio Touchdowns</th>
+      <td mat-cell *matCellDef="let element">{{ element.touchdownRatio }}</td>
+    </ng-container>
+
+    <!-- Ratio Faltas -->
+    <ng-container matColumnDef="foulRatio">
+      <th mat-header-cell *matHeaderCellDef>Ratio Faltas</th>
+      <td mat-cell *matCellDef="let element">{{ element.foulRatio }}</td>
+    </ng-container>
+
+    <!-- Valor Actual del Equipo -->
+    <ng-container matColumnDef="teamValue">
+      <th mat-header-cell *matHeaderCellDef>Valor Actual del Equipo</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.teamValue | currency : "USD" }}
+      </td>
+    </ng-container>
+
+    <!-- Encabezado de la tabla -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <!-- Filas de la tabla -->
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

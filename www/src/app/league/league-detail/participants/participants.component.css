@@ -1,0 +1,52 @@
+.participants-container {
+    padding: 20px;
+}
+
+.participants-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.participant-item {
+    display: flex;
+    background-color: #f3f3f3;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    justify-content: space-between;
+}
+
+.participant-info {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 64px;
+    /* Tamaño del avatar */
+    height: 64px;
+    /* Tamaño del avatar */
+    margin-right: 12px;
+    font-size: 24px;
+    /* Tamaño de la fuente para las iniciales */
+    color: white;
+    /* Color del texto */
+    text-align: center;
+    line-height: 64px;
+    /* Centrar verticalmente */
+}
+
+.user-details {
+    flex-grow: 1;
+}
+
+.nickname {
+    font-style: italic;
+    color: #888;
+}
+
+.team-info {
+    margin-top: 8px;
+    font-size: 14px;
+}

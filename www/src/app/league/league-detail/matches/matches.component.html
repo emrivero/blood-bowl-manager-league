@@ -1,0 +1,45 @@
+<div class="match-schedule-container">
+  <mat-tab-group>
+    <mat-tab *ngFor="let round of rounds" [label]="round.roundName">
+      <div class="matches-list">
+        <div *ngFor="let match of round.matches" class="match-item">
+          <!-- Equipo 1 -->
+          <div class="team team1">
+            <img
+              src="assets/team1-logo.png"
+              alt="{{ match.team1 }} Logo"
+              class="team-logo"
+            />
+            <span class="team-name">{{ match.team1 }}</span>
+          </div>
+
+          <!-- Resultado o "vs" -->
+          <div class="match-info">
+            <span
+              *ngIf="match.score1 !== undefined && match.score2 !== undefined"
+              class="match-score"
+            >
+              {{ match.score1 }} - {{ match.score2 }}
+            </span>
+            <span
+              *ngIf="match.score1 === undefined || match.score2 === undefined"
+              class="match-vs"
+            >
+              vs
+            </span>
+          </div>
+
+          <!-- Equipo 2 -->
+          <div class="team team2">
+            <img
+              src="assets/team2-logo.png"
+              alt="{{ match.team2 }} Logo"
+              class="team-logo"
+            />
+            <span class="team-name">{{ match.team2 }}</span>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

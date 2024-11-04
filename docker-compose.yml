@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  api:
+    image: node:22
+    container_name: api_service
+    working_dir: /app
+    volumes:
+      - ./api:/app
+    ports:
+      - "3000:3000"
+    command: npm start
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb_service
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  www:
+    image: node:22
+    container_name: www_service
+    working_dir: /app
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./www:/app
+    command: npm start
+
+volumes:
+  mongo_data:

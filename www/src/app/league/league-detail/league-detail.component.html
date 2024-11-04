@@ -1,0 +1,37 @@
+<div class="league-detail-container">
+  <h2>{{ leagueName }}</h2>
+
+  <!-- Barra de navegación de Tabs -->
+  <mat-tab-group>
+    <mat-tab label="Calendario">
+      <div class="tab-content">
+        <app-matches></app-matches>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Participantes">
+      <div class="tab-content">
+        <!-- Contenido de Equipos Inscritos -->
+        <app-participants></app-participants>
+        <!-- Puedes agregar aquí una lista o tabla con los equipos inscritos -->
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Clasificación">
+      <div class="tab-content">
+        <!-- Contenido de Clasificación de Equipos -->
+        <app-classification></app-classification>
+        <!-- Agrega aquí una tabla con la clasificación -->
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Premios">
+      <div class="tab-content">
+        <!-- Contenido de Sección de Premios -->
+        <h3>Sección de Premios</h3>
+        <p>Premios disponibles en la liga y sus criterios.</p>
+        <!-- Lista o descripción de premios -->
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

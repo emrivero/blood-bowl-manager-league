@@ -1,0 +1,88 @@
+/* 
+GREEN SCHEME COLORS
+https://www.color-hex.com/color-palette/5045
+*/
+@use '@angular/material' as mat;
+@use './m3-theme';
+
+@include mat.core();
+
+html {
+    // Apply the light theme by default
+    @include mat.core-theme(m3-theme.$light-theme);
+    @include mat.button-theme(m3-theme.$light-theme);
+}
+
+/* Estilos generales */
+body,
+html {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.sidenav-container {
+    height: 100vh;
+}
+
+.sidenav .logo {
+    padding: 20px;
+    text-align: center;
+    color: #449d44;
+    display: flex;
+    align-items: center;
+}
+
+
+.sidenav h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.mat-mdc-list-item {
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.mat-mdc-list-item:hover {
+    background-color: #ffffffb3;
+}
+
+.toolbar {
+    background-color: #449d44;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.content {
+    padding: 24px;
+}
+
+.mat-toolbar.mat-primary {
+    background-color: #449d44;
+}
+
+.mat-mdc-list-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mat-mdc-list-item span {
+    font-size: 1.5rem !important;
+}
+
+.mat-mdc-list-item-unscoped-content {
+    display: flex;
+}
+
+.sidenav {
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #e5e5f7 10px), repeating-linear-gradient(#cccdd155, #338c00aa);
+}
+
+.sidenav .mat-icon {
+    margin-right: 5px;
+}

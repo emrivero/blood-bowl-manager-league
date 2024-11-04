@@ -1,0 +1,30 @@
+<div class="ligas-container">
+  <div class="ligas-header">
+    <h2>Ligas</h2>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="openCreateLeagueDialog()"
+    >
+      <mat-icon>add</mat-icon>
+      Crear Liga
+    </button>
+  </div>
+  <div class="ligas-grid">
+    <mat-card *ngFor="let liga of leagues" class="liga-card">
+      <!-- Imagen de la liga -->
+      <img
+        mat-card-image
+        src="https://placehold.co/150x150"
+        alt="Imagen de la Liga"
+      />
+
+      <!-- Contenido de la card -->
+      <mat-card-content>
+        <h3>{{ liga.name }}</h3>
+        <p>Número de jugadores: {{ liga.playersCount }}</p>
+        <p>Estado: {{ liga.status }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
