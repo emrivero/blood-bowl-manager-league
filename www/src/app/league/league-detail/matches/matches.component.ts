@@ -8,6 +8,8 @@ interface Match {
   team2: string;
   score1?: number;
   score2?: number;
+  coach1: string;
+  coach2: string;
 }
 
 interface Round {
@@ -27,23 +29,60 @@ export class MatchesComponent {
     {
       roundName: 'Jornada 1',
       matches: [
-        { team1: 'Equipo A', team2: 'Equipo B', score1: 2, score2: 1 },
-        { team1: 'Equipo C', team2: 'Equipo D', score1: 1, score2: 1 },
+        {
+          team1: 'Equipo A',
+          team2: 'Equipo B',
+          score1: 2,
+          score2: 1,
+          coach1: 'Ale',
+          coach2: 'Javi',
+        },
+        {
+          team1: 'Equipo C',
+          team2: 'Equipo D',
+          score1: 1,
+          score2: 1,
+          coach1: 'Ale',
+          coach2: 'Javi',
+        },
       ],
     },
     {
       roundName: 'Jornada 2',
       matches: [
-        { team1: 'Equipo A', team2: 'Equipo C', score1: 3, score2: 2 },
-        { team1: 'Equipo B', team2: 'Equipo D' },
+        {
+          team1: 'Equipo A',
+          team2: 'Equipo C',
+          score1: 3,
+          score2: 2,
+          coach1: 'Ale',
+          coach2: 'Javi',
+        },
+        { team1: 'Equipo B', team2: 'Equipo D', coach1: 'Ale', coach2: 'Javi' },
       ],
     },
     {
       roundName: 'Jornada 3',
       matches: [
-        { team1: 'Equipo A', team2: 'Equipo D', score1: 1, score2: 2 },
-        { team1: 'Equipo B', team2: 'Equipo C', score1: 2, score2: 2 },
+        {
+          team1: 'Equipo A',
+          team2: 'Equipo D',
+          score1: 1,
+          score2: 2,
+          coach1: 'Ale',
+          coach2: 'Javi',
+        },
+        {
+          team1: 'Equipo B',
+          team2: 'Equipo C',
+          score1: 2,
+          score2: 2,
+          coach1: 'Ale',
+          coach2: 'Javi',
+        },
       ],
     },
   ];
+
+  date = new Date();
 }

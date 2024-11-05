@@ -3,17 +3,28 @@ GREEN SCHEME COLORS
 https://www.color-hex.com/color-palette/5045
 */
 @use '@angular/material' as mat;
-@use './m3-theme';
+@use './m3-theme' as *;
 
-@include mat.core();
-
-html {
-    // Apply the light theme by default
-    @include mat.core-theme(m3-theme.$light-theme);
-    @include mat.button-theme(m3-theme.$light-theme);
+.mat-mdc-tab-group,
+.mat-mdc-tab-nav-bar {
+    --mdc-tab-indicator-active-indicator-color: #449d44;
+    --mat-tab-header-disabled-ripple-color: rgba(0, 0, 0, 0.38);
+    --mat-tab-header-pagination-icon-color: black;
+    --mat-tab-header-inactive-label-text-color: rgba(0, 0, 0, 0.6);
+    --mat-tab-header-active-label-text-color: #449d44;
+    --mat-tab-header-active-ripple-color: #449d44;
+    --mat-tab-header-inactive-ripple-color: #449d44;
+    --mat-tab-header-inactive-focus-label-text-color: rgba(0, 0, 0, 0.6);
+    --mat-tab-header-inactive-hover-label-text-color: rgba(0, 0, 0, 0.6);
+    --mat-tab-header-active-focus-label-text-color: #449d44;
+    --mat-tab-header-active-hover-label-text-color: #449d44;
+    --mat-tab-header-active-focus-indicator-color: #449d44;
+    --mat-tab-header-active-hover-indicator-color: #449d44
 }
+// .tema-claro {
+//     @include mat.all-component-themes($light-theme);
+// }
 
-/* Estilos generales */
 body,
 html {
     margin: 0;

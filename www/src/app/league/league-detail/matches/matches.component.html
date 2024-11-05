@@ -10,11 +10,17 @@
               alt="{{ match.team1 }} Logo"
               class="team-logo"
             />
-            <span class="team-name">{{ match.team1 }}</span>
+            <div class="team-info">
+              <span class="team-name">{{ match.team1 }}</span>
+              <span>{{ match.coach1 }}</span>
+            </div>
           </div>
 
           <!-- Resultado o "vs" -->
           <div class="match-info">
+            <div class="match-date">
+              <span>{{ date | date : "dd MMM yyyy" }}</span>
+            </div>
             <span
               *ngIf="match.score1 !== undefined && match.score2 !== undefined"
               class="match-score"
@@ -36,7 +42,10 @@
               alt="{{ match.team2 }} Logo"
               class="team-logo"
             />
-            <span class="team-name">{{ match.team2 }}</span>
+            <div class="team-info">
+              <span class="team-name">{{ match.team2 }}</span>
+              <span>{{ match.coach2 }}</span>
+            </div>
           </div>
         </div>
       </div>
